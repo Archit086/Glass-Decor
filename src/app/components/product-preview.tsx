@@ -1,6 +1,7 @@
 "use client";
 import FadeIn from "./fade-in";
 import Image from "next/image";
+import Link from "next/link";
 
 const categories = [
   { title: "Custom Mirrors", image: "/images/mirror_product_1775669460883.png", mt: "lg:mt-0" },
@@ -14,11 +15,17 @@ export default function ProductPreview() {
     <section className="py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6">
         <FadeIn>
-          <div className="flex flex-col md:flex-row justify-between items-start mb-24 gap-8">
-            <h2 className="font-serif text-3xl md:text-5xl tracking-tight text-foreground max-w-[15ch]">Our Crafted Solutions</h2>
-            <p className="mt-2 text-muted-foreground md:max-w-md font-light leading-relaxed text-lg">
-              Expertly crafted panels, mirrors, and enclosures designed to blend seamlessly into minimal environments.
-            </p>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-8">
+            <div>
+              <h2 className="font-serif text-3xl md:text-5xl tracking-tight text-foreground max-w-[15ch]">Our Crafted Solutions</h2>
+              <p className="mt-2 text-muted-foreground md:max-w-md font-light leading-relaxed text-lg">
+                Expertly crafted panels, mirrors, and enclosures designed to blend seamlessly into minimal environments.
+              </p>
+            </div>
+            <Link href="/products" className="group flex items-center gap-2 text-[15px] font-medium tracking-wide text-foreground hover:text-muted-foreground transition-colors border-b border-foreground/30 pb-1 mb-1 hover:border-foreground/60">
+              View All Products
+              <span className="group-hover:translate-x-1 transition-transform duration-300">&rarr;</span>
+            </Link>
           </div>
         </FadeIn>
         

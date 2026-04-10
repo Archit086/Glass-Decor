@@ -19,8 +19,8 @@ export default function Navbar() {
             Projects
           </Link>
           <Link 
-            href="/#products" 
-            className="hover:text-foreground transition-colors duration-200"
+            href="/products" 
+            className={`transition-colors duration-200 ${pathname === '/products' ? 'text-foreground font-semibold' : 'hover:text-foreground'}`}
           >
             Products
           </Link>
