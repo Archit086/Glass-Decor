@@ -1,5 +1,6 @@
 "use client";
 import FadeIn from "./fade-in";
+import Link from "next/link";
 
 export default function Cta() {
   return (
@@ -10,9 +11,9 @@ export default function Cta() {
           <p className="mt-6 text-muted font-sans text-lg md:text-xl font-light">
             Bring clarity and modern elegance to your next project.
           </p>
-          <button className="mt-10 px-8 py-4 bg-background text-foreground font-medium rounded hover:bg-muted transition-colors shadow-lg shadow-background/5">
+          <Link href="/contact" className="inline-block mt-10 px-8 py-4 bg-background text-foreground font-medium rounded hover:bg-muted transition-colors shadow-lg shadow-background/5 text-center">
             Contact Us Today
-          </button>
+          </Link>
         </FadeIn>
       </div>
     </section>

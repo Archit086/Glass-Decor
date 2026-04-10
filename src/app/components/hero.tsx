@@ -27,9 +27,9 @@ export default function Hero({ imageUrl }: { imageUrl: string }) {
                             <Link href="/products" className="px-8 py-4 bg-foreground text-background text-center font-medium text-sm rounded hover:bg-foreground/90 transition-all duration-300 shadow-xl shadow-foreground/10 hover:shadow-foreground/20 block sm:inline-block">
                                 Explore Products
                             </Link>
-                            <button className="px-8 py-4 bg-background border border-border text-foreground font-medium text-sm rounded hover:bg-accent transition-all duration-300">
+                            <Link href="/contact" className="px-8 py-4 bg-background border border-border text-foreground font-medium text-sm rounded hover:bg-accent transition-all duration-300 block sm:inline-block text-center">
                                 Contact Us
-                            </button>
+                            </Link>
                         </div>
                     </FadeIn>
                 </div>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import FadeIn from "@/app/components/fade-in";
+import Link from "next/link";
 
 const images = [
   "/images/glass_hero_1775669437068.png",
@@ -124,9 +125,9 @@ export default function AboutUsSection() {
             <p className="text-background/50 font-light text-lg mb-0 block">Uncompromising quality and seamless coordination from design to installation.</p>
           </FadeIn>
           <FadeIn delay={200} className="shrink-0">
-            <button className="bg-background text-foreground hover:bg-muted font-medium px-8 py-4 rounded transition-colors duration-300 shadow-xl shadow-background/5">
+            <Link href="/contact" className="inline-block bg-background text-foreground hover:bg-muted font-medium px-8 py-4 rounded transition-colors duration-300 shadow-xl shadow-background/5 text-center">
               Contact Us Today
-            </button>
+            </Link>
           </FadeIn>
         </div>
       </div>

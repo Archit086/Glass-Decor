@@ -2,6 +2,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import FadeIn from "../components/fade-in";
 import Image from "next/image";
+import Link from "next/link";
 import { Home, Bath, Sofa, Briefcase, Store, Monitor } from "lucide-react";
 
 const products = [
@@ -192,9 +193,9 @@ export default function ProductsPage() {
             <h3 className="text-4xl md:text-5xl font-serif tracking-tight mb-4 leading-tight">Let’s bring your vision to life.</h3>
           </FadeIn>
           <FadeIn delay={200} className="shrink-0">
-            <button className="bg-background text-foreground hover:bg-muted font-medium px-8 py-4 rounded transition-colors duration-300 shadow-xl shadow-background/5">
+            <Link href="/contact" className="inline-block bg-background text-foreground hover:bg-muted font-medium px-8 py-4 rounded transition-colors duration-300 shadow-xl shadow-background/5 text-center">
               Get a Quote
-            </button>
+            </Link>
           </FadeIn>
         </div>
       </section>
