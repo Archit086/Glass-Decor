@@ -13,8 +13,8 @@ export default function Navbar() {
         </Link>
         <div className="hidden md:flex space-x-8 text-sm font-medium text-muted-foreground">
           <Link 
-            href="/#projects" 
-            className="hover:text-foreground transition-colors duration-200"
+            href="/projects" 
+            className={`transition-colors duration-200 ${pathname === '/projects' ? 'text-foreground font-semibold' : 'hover:text-foreground'}`}
           >
             Projects
           </Link>
