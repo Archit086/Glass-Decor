@@ -1,0 +1,7 @@
+fastapi[all]
+sqlmodel
+asyncpg
+alembic
+pydantic[email]
+uvicorn[standard]
+python-dotenv
