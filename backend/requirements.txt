@@ -5,3 +5,4 @@ alembic
 pydantic[email]
 uvicorn[standard]
 python-dotenv
+PyJWT

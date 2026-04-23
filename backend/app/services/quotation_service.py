@@ -20,5 +20,25 @@ class QuotationService:
 
     @staticmethod
     async def get_all(session: AsyncSession):
-        result = await session.exec(select(QuotationRequest))
+        result = await session.exec(select(QuotationRequest).order_by(QuotationRequest.created_at.desc()))
         return result.all()
+
+    @staticmethod
+    async def update_status(session: AsyncSession, quote_id: int, new_status: str):
+        quote = await session.get(QuotationRequest, quote_id)
+        if not quote:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Quotation not found")
+        quote.status = new_status
+        session.add(quote)
+        await session.commit()
+        await session.refresh(quote)
+        return quote
+
+    @staticmethod
+    async def delete(session: AsyncSession, quote_id: int):
+        quote = await session.get(QuotationRequest, quote_id)
+        if not quote:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Quotation not found")
+        await session.delete(quote)
+        await session.commit()
+        return {"ok": True}

@@ -11,4 +11,5 @@ class Inquiry(SQLModel, table=True):
     email: str
     phone: str
     message: str
+    status: str = Field(default="New")
     created_at: datetime = Field(default_factory=utc_now)

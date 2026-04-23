@@ -13,6 +13,7 @@ class QuotationRequest(SQLModel, table=True):
     product_id: int = Field(foreign_key="product.id")
     quantity: int = Field(default=1)
     custom_requirements: Optional[str] = Field(default=None)
+    status: str = Field(default="New")
     created_at: datetime = Field(default_factory=utc_now)
 
     product: Optional["Product"] = Relationship(back_populates="quotations")

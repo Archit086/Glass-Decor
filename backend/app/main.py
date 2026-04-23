@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
-from app.routers import categories, products, inquiries, quotations
+from app.routers import categories, products, inquiries, quotations, admin
 
 app = FastAPI(
     title="Glass Decor API",
@@ -13,7 +13,7 @@ app = FastAPI(
 # CORS configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust this in production
+    allow_origins=["http://localhost:3000"],  # Adjust this in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -24,6 +24,7 @@ app.include_router(categories.router)
 app.include_router(products.router)
 app.include_router(inquiries.router)
 app.include_router(quotations.router)
+app.include_router(admin.router)
 
 @app.get("/")
 def root():
